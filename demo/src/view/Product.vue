@@ -23,7 +23,7 @@
         </thead>
         <tbody>
         <tr v-for=" (product, index) in products">
-          <td>{{ (index + 1) }}</td>
+          <td>{{ (index + 1) + ((currentPage-1) * perPage )}}</td>
           <td>{{ product.name_uz }}</td>
           <slot v-for="type in productType">
             <td v-if="type.id === product.product_type_id"> {{type.name_uz}}</td>
