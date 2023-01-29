@@ -96,7 +96,6 @@ export default {
       })
     },
     Smth(e) {
-
       this.perPage = e.target.value
       this.GetProducts()
     }
@@ -107,14 +106,14 @@ export default {
     )).catch(err => {
       console.log(err)
     })
-      axios.get("http://94.158.54.194:9092/api/product/get-product-types").then(res => (this.productType = res.data)).catch (error)
-      alert("something went wrong!")
+      axios.get("http://94.158.54.194:9092/api/product/get-product-types").then(res => (this.productType = res.data)).catch(err => {
+        console.log(err)
+      })
     axios.get(`http://94.158.54.194:9092/api/product`).then(res => (
         this.totalPage = Math.ceil(res.data.length / this.perPage)
     )).catch(err => {
       console.log(err)
     })
-
   }
 }
 
